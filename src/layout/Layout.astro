@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Dwight Rogers // Resume">
+      <main
+            class="max-w-4xl mx-auto p-12 print:bg-[#fcfcfc] print:text-[#080808]"
+      >
+            <!-- HEADER: Minimalist Orange Accent -->
+            <header class="border-b-2 border-accent pb-8 mb-8">
+                  <h1 class="text-5xl font-black uppercase tracking-tighter">
+                        Dwight Rogers
+                  </h1>
+                  <p class="text-accent font-mono text-sm uppercase mt-2">
+                        Design Engineer & Hybrid Creator
+                  </p>
+            </header>
+
+            <!-- CONTENT -->
+            <section class="grid grid-cols-3 gap-6">
+                  {
+                        [
+                              {
+                                    t: "VoltFund Console",
+                                    d: "Astro/TS Dashboard",
+                              },
+                              { t: "ClearCard", d: "Glassmorphic Utility" },
+                              { t: "Vantge", d: "Media Node Tracker" },
+                        ].map((p) => (
+                              <div class="border border-accent p-4 bg-accent/5 print:bg-transparent">
+                                    <h4 class="text-accent font-bold text-sm">
+                                          {p.t}
+                                    </h4>
+                                    <p class="text-muted text-xs mt-1 print:text-gray-600">
+                                          {p.d}
+                                    </p>
+                              </div>
+                        ))
+                  }
+            </section>
+
+            <!-- PRINT BUTTON -->
+            <button
+                  onclick="window.print()"
+                  class="no-print mt-12 border border-accent text-accent px-4 py-2 font-mono text-xs hover:bg-accent hover:text-white transition-all"
+            >
+                  SAVE_AS_PDF
+            </button>
+      </main>
+</Layout>

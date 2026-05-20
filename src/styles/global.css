@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@layer base {
+      :root {
+      /* Main Dark Mode (Screen) */
+            --background: #080808;
+            --foreground: #ffffff;
+            
+      /* Print Mode (Soft White Background) */
+            --print-bg: #fcfcfc; 
+            --print-fg: #080808;
+
+            --accent: #f57f00;
+      }
+
+      body {
+            background-color: var(--background);
+            color: var(--foreground);
+            font-family: 'Inter', sans-serif;
+      }   
+      }
+
+/* Print Optimization: Soft White + Orange */
+@media print {
+      body { 
+            background-color: var(--print-bg) !important; 
+            color: var(--print-fg) !important; 
+      }
+      
+      /* Force orange to stay vibrant on white paper */
+            .text-accent { color: var(--accent) !important; }
+            .border-accent { border-color: var(--accent) !important; }
+      
+      }

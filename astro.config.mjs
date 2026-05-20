@@ -1,5 +1,6 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+// Remove the import and the integration line
+export default defineConfig({
+  // Keep this empty for now
+});
