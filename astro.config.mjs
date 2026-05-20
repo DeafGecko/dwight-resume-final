@@ -1,6 +1,4 @@
 import { defineConfig } from 'astro/config';
 
-// Remove the import and the integration line
-export default defineConfig({
-  // Keep this empty for now
-});
+// The integration is gone, so the file should look like this:
+export default defineConfig({});
