@@ -3,43 +3,136 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Dwight Rogers // Resume">
-	<main class="max-w-4xl mx-auto p-12">
-		<header class="border-b-2 border-accent pb-8 mb-8">
-			<h1 class="text-5xl font-black uppercase tracking-tighter">
-				Dwight Rogers
-			</h1>
-			<p class="text-accent font-mono text-sm uppercase mt-2">
-				Design Engineer & Hybrid Creator
+	<main class="max-w-4xl mx-auto py-20 px-8">
+		<header class="mb-16">
+			<p
+				class="text-[#f57f00] font-mono text-sm tracking-widest mb-4 uppercase"
+			>
+				Dwight Rogers | DeafGecko
 			</p>
+			<h1
+				class="text-6xl font-black tracking-tighter leading-none mb-6"
+			>
+				Frontend Developer & <br />Design Engineer
+			</h1>
+			<p class="text-gray-400 text-lg max-w-2xl mb-2">
+				Reliable, ambitious team player passionate about using
+				multimedia platforms to convey concepts visually and
+				accurately within Deaf and Hearing communities.
+			</p>
+			<div class="mb-10">
+				<a
+					href="https://09labs-portfolio.vercel.app/"
+					class="text-[#f57f00] font-mono hover:underline uppercase tracking-widest text-sm"
+				>
+					← View Full Portfolio at 09labs
+				</a>
+			</div>
 		</header>
 
-		<section class="grid grid-cols-3 gap-6">
+		<section class="space-y-12">
+			<h2
+				class="text-[#f57f00] font-bold text-sm uppercase tracking-widest border-b border-gray-800 pb-4"
+			>
+				// Professional Experience
+			</h2>
+
 			{
 				[
 					{
-						t: "VoltFund Console",
-						d: "Astro/TS Dashboard",
+						role: "Director of Strategic Productions",
+						org: "Deaf Pathway Global",
+						date: "2016-Present",
+						desc: "Design, produce, and brand formats for Bible/Translation Apps. Manage graphic pipelines and support translation processes.",
 					},
-					{ t: "ClearCard", d: "Glassmorphic Utility" },
-					{ t: "Vantge", d: "Media Node Tracker" },
-				].map((p) => (
-					<div class="border border-accent p-4 bg-[#1a1a1a] print:bg-transparent">
-						<h4 class="text-accent font-bold text-sm">
-							{p.t}
-						</h4>
-						<p class="text-gray-400 text-xs mt-1 print:text-gray-600">
-							{p.d}
-						</p>
+					{
+						role: "Local Church Planter",
+						org: "Columbia Deaf Church",
+						date: "2023-Present",
+						desc: "Weekly Bible instruction, mentorship, and stewardship of mission impact.",
+					},
+					{
+						role: "International Church Planter",
+						org: "International Mission Board",
+						date: "2009-2016",
+						desc: "Evangelism for Deaf people in East/South Asia. Logistics coordination and sign language training.",
+					},
+					{
+						role: "Creative Marketing",
+						org: "Temple Baptist Church",
+						date: "2004-2010",
+						desc: "Design, stagecraft, and lighting management for weekly services and events.",
+					},
+				].map((job) => (
+					<div class="grid md:grid-cols-[200px,1fr] gap-4">
+						<div class="text-gray-500 font-mono text-sm">
+							{job.date}
+						</div>
+						<div>
+							<h3 class="text-white font-bold text-lg">
+								{job.role}
+							</h3>
+							<p class="text-[#f57f00] font-semibold text-sm mb-2">
+								{job.org}
+							</p>
+							<p class="text-gray-400 text-sm leading-relaxed">
+								{job.desc}
+							</p>
+						</div>
 					</div>
 				))
 			}
 		</section>
 
-		<button
-			onclick="window.print()"
-			class="no-print mt-12 border border-accent text-accent px-4 py-2 font-mono text-xs hover:bg-accent hover:text-white transition-all"
+		<section
+			class="mt-20 grid md:grid-cols-2 gap-8 border-t border-gray-800 pt-12"
 		>
-			SAVE_AS_PDF
-		</button>
+			<div>
+				<h2
+					class="text-[#f57f00] font-bold text-sm uppercase mb-6"
+				>
+					// Certifications
+				</h2>
+				<div class="bg-[#1a1a1a] p-6 border border-gray-800">
+					<h3 class="font-bold">Frontend Engineering</h3>
+					<p class="text-gray-400 text-sm">
+						Codecademy (May 2026)
+					</p>
+					<p class="text-[#f57f00] text-xs mt-2 italic">
+						Continuing to Full-Stack track
+					</p>
+				</div>
+			</div>
+			<div>
+				<h2
+					class="text-[#f57f00] font-bold text-sm uppercase mb-6"
+				>
+					// Academic Background
+				</h2>
+				<ul class="text-gray-300 text-sm space-y-4">
+					<li>
+						<strong>Seminary Certification</strong> | Deaf
+						Theological Center (2014)
+					</li>
+					<li>
+						<strong>AA Graphic Design</strong> | Greenville
+						Tech College
+					</li>
+					<li>
+						<strong>AS Electronic Engineering</strong> | Northeast
+						State
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<div class="mt-20 no-print">
+			<button
+				onclick="window.print()"
+				class="bg-[#f57f00] text-black font-bold px-8 py-3 hover:opacity-90 transition-opacity uppercase tracking-widest text-sm"
+			>
+				Save Resume as PDF
+			</button>
+		</div>
 	</main>
 </Layout>

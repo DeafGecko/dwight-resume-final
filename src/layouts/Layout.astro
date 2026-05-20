@@ -5,12 +5,47 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
       <head>
             <meta charset="UTF-8" />
             <title>{title}</title>
-            <link rel="stylesheet" href="/src/styles/global.css" />
+            <style is:global>
+                  @import "tailwindcss";
+
+                  /* Force standard page sizes for PDF */
+                  @page {
+                        size: A4;
+                        margin: 20mm;
+                  }
+
+                  /* Desktop Dark Theme */
+                  body {
+                        background-color: #080808;
+                        color: #ffffff;
+                        font-family: "Inter", sans-serif;
+                  }
+
+                  /* Print: Switch to clean Black/White for PDF */
+                  @media print {
+                        body {
+                              background-color: #ffffff !important;
+                              color: #000000 !important;
+                        }
+                        .no-print {
+                              display: none !important;
+                        }
+
+                        /* Prevent orphans/widows */
+                        section {
+                              page-break-inside: avoid;
+                        }
+                        h1,
+                        h2,
+                        h3 {
+                              page-break-after: avoid;
+                        }
+                  }
+            </style>
       </head>
       <body>
             <slot />
